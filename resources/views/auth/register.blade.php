@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('pageTitle')
+Register - Pool Your Home
+@endsection
+
 @section('content')
 <main id="content" class="register">
 	<div class="page-header" id="headerContent"><h2>Register</h2></div>

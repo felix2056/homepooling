@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('pageTitle')
+Login - Pool Your Home
+@endsection
+
 @section('content')
 <style type="text/css">
 	.mt-1 {

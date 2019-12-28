@@ -1,3 +1,7 @@
+@section('pageTitle')
+Messages - Pool Your Home
+@endsection
+
 @extends('layouts.app')
 
 @section('content')

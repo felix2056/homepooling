@@ -1,3 +1,7 @@
+@section('pageTitle')
+{{ $property->location }}
+@endsection
+
 @extends('layouts.app')
 
 @section('content')
@@ -16,19 +20,19 @@
 		@if($now->diffInDays($property->created_at) < 7 && $property->early_access == 1) <span class="listing-label label-early">Early</span> @elseif($now->diffInDays($property->created_at) < 7)<span class="listing-label label-new">New</span> @endif
 		<div class="top-banner-wrapper">
 			<div class="big-{{ $images->count() < 3 ? 'one-' : ''}}image">
-				<a data-fancybox="property" href="{{ $images->count() > 0 ? getPath($images, 0) : '/storage/img/dummy_property_image.jpeg' }}" class="image" style="background-image: url({{ $images->count() > 0 ? getPath($images, 0) : '/storage/img/home/dummy_property_img.jpg' }});"></a>
+				<a data-fancybox="property" href="{{ $images->count() > 0 ? '/storage/img/'.getPath($images, 0) : '/storage/img/dummy_property_image.jpeg' }}" class="image" style="background-image: url({{ $images->count() > 0 ? '/storage/img/'.getPath($images, 0) : '/storage/img/home/dummy_property_img.jpg' }});"></a>
 			</div>
 			@if($images->count() > 2)
 				<div class="split-images">
-					<a href="{{ getPath($images, 1) }}" class="image" data-fancybox="property" style="background-image: url({{ getPath($images, 1) }});"></a>
-					<a href="{{ getPath($images, 2) }}" class="image" data-fancybox="property" style="background-image: url({{ getPath($images, 2) }});"></a>
+					<a href="{{ '/storage/img/'.getPath($images, 1) }}" class="image" data-fancybox="property" style="background-image: url({{ '/storage/img/'.getPath($images, 1) }});"></a>
+					<a href="{{ '/storage/img/'.getPath($images, 2) }}" class="image" data-fancybox="property" style="background-image: url({{ '/storage/img/'.getPath($images, 2) }});"></a>
 				</div>
 			@endif
 			<?php $imgCt = 0; ?>
 			@if($images->count() > 3)
 				@foreach($images as $ik => $i)
 					@if($imgCt > 2)
-						<a href="{{ getPath($images, $ik) }}" class="hidden" data-fancybox="property" style="background-image: url({{ getPath($images, $ik) }});"></a>
+						<a href="{{ '/storage/img/'.getPath($images, $ik) }}" class="hidden" data-fancybox="property" style="background-image: url({{ '/storage/img/'.getPath($images, $ik) }});"></a>
 					@endif
 					<?php $imgCt++; ?>
 				@endforeach
@@ -51,9 +55,10 @@
 			<p>{{ isset($property->bills) ? 'Bills Excluded' : ((isset($property->rooms) && isset($property->rooms[0]->bills)) ? 'Bills Excluded' : 'Bills included') }}</p>
 			@endif
 		</div>
+
 		<div class="viewers">
 			<div class="listing-visitors">
-				<a href="#" class="visitor visitor-main" style="background-image:url(@isset($property->user->photo) {{ $property->user->photo }} @else /storage/img/profile_placeholder.png @endisset)"><!--<span class="blue_circle"></span>--></a>
+				<a href="#" class="visitor visitor-main proimage" style="background-image:url(@isset($property->user->photo) {{ $property->user->photo }} @else /storage/img/profile_placeholder.png @endisset)"><!--<span class="blue_circle"></span>--></a>
 				@foreach($property->rooms as $room)
 					@if($room->occupants>0 && $room->lgbt>0)
 						@if($room->beds > $room->occupants)

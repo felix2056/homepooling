@@ -1,3 +1,7 @@
+@section('pageTitle')
+Listing - Find Your preferred Location
+@endsection
+
 @extends('layouts.app')
 
 @section('content')

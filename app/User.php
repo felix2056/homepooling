@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Cache;
 
 use Laravel\Cashier\Billable;
 
@@ -14,6 +15,11 @@ class User extends Authenticatable
 
 	protected $fillable = ['name', 'email', 'password', 'gender', 'photo','family_name','msg_in_remain','early_bird'];
 	protected $hidden 	= ['password', 'remember_token', 'is_admin'];
+
+	public function isOnline()
+	{
+	    return Cache::has('user-is-online-' .$this->id);
+	}
 
 	public function preferences(){
 		return $this->hasOne('\App\UserPreference');

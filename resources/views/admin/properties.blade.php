@@ -1,7 +1,63 @@
 @extends('layouts.adminNew')
 
 @section('content')
-	<main id="content" class="dashboard">
+<div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Data Table</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+											<th>Published by</th>
+											<th>User type</th>
+											<th>Address</th>
+											<th>Town</th>
+											<th>Status</th>
+											<th>Early access?</th>
+											<th>On top until</th>
+											<th>Created at</th>
+											<th>Delete?</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($properties as $property)
+											<tr>
+												<td><a href="/back-office/properties/{{$property->id}}">{{$property->id}}</a></td>
+												<td><a href="/back-office/properties/{{$property->id}}">{{$property->user->name.' '.$property->user->family_name}}</a></td>
+												<td><a href="/back-office/properties/{{$property->id}}">{{$property->user_type}}</a></td>
+												<td><a href="/back-office/properties/{{$property->id}}">{{$property->address}}</a></td>
+												<td><a href="/back-office/properties/{{$property->id}}">{{$property->town}}</a></td>
+												<td><a href="/back-office/properties/{{$property->id}}">{{$property->status}}</a></td>
+												<td><a href="/back-office/profiles/{{$property->id}}">@if($property->early_access==1) Yes @else No @endif</a></td>
+												<td><a href="/back-office/properties/{{$property->id}}">{{$property->on_top_until}}</a></td>
+												<td><a href="/back-office/properties/{{$property->id}}">{{$property->created_at}}</a></td>
+												<td>
+													<form action="/properties/{{$property->id}}" method="POST">
+														{!! csrf_field() !!}
+														<input type="hidden" name="_method" value="DELETE">
+														<button class="btn btn-delete btn-danger"><i class="fa fa-close"></i></button>
+													</form>
+												</td>
+											</tr>
+										@endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {{$properties->links()}}
+                    </div>
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+	<!--<main id="content" class="dashboard">
 		<div class="container">
 			<h1>Manage Properties</h1>
 			<div class="last_properties prop_table">
@@ -46,7 +102,6 @@
 				{{$properties->links()}}
 			</div>
 		</div>
-	</main>
-
+	</main>-->
 @endsection 
  

@@ -49,7 +49,7 @@
 										<div class="name">{{ $msgCt->name.' '.$msgCt->family_name }}</div>
 										<div class="latest-msg">{{ ($me ? 'You: ' : '') . $c->text }}</div>
 									</div>
-									<div class="date">{{ $cDate->day.' '.$months[$cDate->month] }}</div>
+									<div class="date">{{-- $cDate->day.' '.$months[$cDate->month] --}}</div>
 								</div>
 								<?php array_push($ctLoaded, $msgCt->id); ?>
 							@endif

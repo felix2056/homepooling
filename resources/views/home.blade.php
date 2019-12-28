@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('pageTitle')
+HomePooling - Pool Your Home
+@endsection
+
 @section('content')
 <main id="content" class="homepage">
 	<?php /*<div class="page-header" id="headerContent" style="padding-top: 200px;padding-bottom: 200px;">
@@ -33,7 +37,7 @@
   				</div>
   			 endguest*/ ?>
 
-    <div class="parallax">
+    <!--<div class="parallax">
       <div class="hero-section-content">
         <h1 class="text-shadow">Find your</h1>
         <h1 class="bold text-shadow em3">Homepool</h1>
@@ -46,7 +50,239 @@
         </form>
         <a href="/properties/create" class="white mt10 text-shadow">Pool your home</a>
       </div>
+    </div>-->
+
+    <style type="text/css">
+     .carousel-inner{
+        height: 53em;
+      }
+
+      .homepoolHead{
+        position: absolute;
+        right: 15%;
+        left: 15%;
+        z-index: 10;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: #fff;
+        text-align: center;
+        top: 30%;
+      }
+
+      .homepoolHead h3{
+        font-size: 3em;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .homepoolHead input{
+        width: 26em;
+      }
+
+      .sliderText h3{
+        font-size: 3em;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .sliderText p{
+        font-size: 1em;
+        color: #fff;
+        text-transform: capitalize;
+      }
+
+      @media screen and (max-width: 450px) {
+        .homepoolHead {
+          top: 2%;
+        }
+        .homepoolHead h3{
+          font-size: 25px;
+          font-weight: 100;
+        }
+        .homepoolHead form input{
+          width: 15em;
+          margin-bottom: 10px;
+        }
+
+        .sliderText h3, .sliderText p{
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: 450px) {
+        .homepoolHead {
+          top: 3%;
+        }
+        .homepoolHead h3{
+          font-size: 30px;
+          font-weight: 100;
+        }
+        .homepoolHead form input{
+          width: 20em;
+          margin-bottom: 15px;
+        }
+        .sliderText h3, .sliderText p{
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: 600px) {
+        .homepoolHead {
+          top: 8%;
+        }
+        .homepoolHead h3{
+          font-size: 2em;
+          font-weight: 100;
+        }
+        .homepoolHead form input{
+          width: 20em;
+          margin-bottom: 20px;
+        }
+        .sliderText h3, .sliderText p{
+          display: block;
+          font-size: 10px;
+          top: 70%
+        }
+        .sliderText h3{
+          font-size: 25px;
+        }
+        .sliderText p{
+          font-size: 18px;
+        }
+      }
+
+      @media screen and (min-width: 690px) {
+        .homepoolHead {
+          top: 15%;
+        }
+        .homepoolHead h3{
+          font-size: 3em;
+          font-weight: 100;
+        }
+        .homepoolHead form input{
+          width: 20em;
+          margin-bottom: 20px;
+        }
+        .sliderText h3{
+          font-size: 30px;
+        }
+        .sliderText p{
+          font-size: 25px
+        }
+      }
+
+      @media screen and (min-width: 850px) {
+        .homepoolHead {
+          top: 20%;
+        }
+        .homepoolHead h3{
+          font-size: 3em;
+          font-weight: 600;
+        }
+        .homepoolHead form input{
+          width: 25em;
+          margin-bottom: 20px;
+        }
+        .sliderText h3, .sliderText p{
+          top: 80%;
+        }
+        .sliderText h3{
+          font-size: 40px;
+        }
+        .sliderText p{
+          font-size: 10px
+        }
+      }
+
+      @media screen and (min-width: 1050px) {
+        .homepoolHead {
+          top: 25%;
+        }
+        .homepoolHead h3{
+          font-size: 4em;
+          font-weight: 800;
+        }
+        .homepoolHead form input{
+          width: 25em;
+          margin-bottom: 20px;
+        }
+        .sliderText h3{
+          font-size: 45px;
+        }
+        .sliderText p{
+          font-size: 15px;
+        }
+      }
+
+       @media screen and (min-width: 1300px) {
+        .homepoolHead {
+          top: 30%;
+        }
+        .homepoolHead h3{
+          font-size: 4em;
+          font-weight: 700;
+        }
+        .homepoolHead form input{
+          width: 35em;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <?php
+    for ($i=0; $i < $sliders->count(); $i++) {
+    ?>
+      <li data-target="#carouselExampleFade" data-slide-to="<?php echo $i; ?>"></li>
+    <?php
+    }
+    ?>
+  </ol>
+  <!--/.Indicators-->
+  <div class="carousel-inner">
+    @foreach($sliders as $slider)
+    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+      <div class="view">
+        <img class="d-block w-100" src="{{ asset('storage/img/home')}}/{{ $slider->image }}"
+        alt="{{ $slider->title }}">
+        <div class="mask rgba-black-strong"></div>
+      </div>
+      <div class="carousel-caption sliderText">
+        <h3 class="h3-responsive">{{ $slider->title }}</h3>
+        <p>{{ $slider->subtitle }}</p>
+      </div>
     </div>
+    @endforeach
+
+    <div class="carousel-caption homepoolHead" style="">
+        <h3 class="h3-responsive">Find your HomePool</h3>
+        <form class="form mt20 loc-form" action="{{ route('properties.index') }}" method="get" style="width: 100%;">
+          
+          <input type="hidden" id="lat" name="lat">
+          <input type="hidden" id="long" name="long">
+          <input type="text" class="box-shadow mlr5" placeholder="Location" id="autocomplete" name="location" class="location" @if(Auth::check() && isset(Auth::user()->preferences) && isset(Auth::user()->preferences->location)) value="{{Auth::user()->location}}" @endif />
+          <button class="blue-button box-shadow">Find Home</button>
+        </form>
+      </div>
+  </div>
+
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+
+
 
     <?php /*<div class="" style="background-color: #fff">
       <div class="page-content container">
@@ -75,30 +311,22 @@
     <div id="whyhomepooling" class="flex-section whitebg p20">
       <h1 class="p20 title_h1">Why Homepooling?</h1>    
       <div class="flex-container whitebg">
-        <div class="box p20">
-          <img class="p10" src="/storage/img/home/locked.png">
-          <h2>We're Safe</h2>
-          <p class="p10">Homepooling members are verified via SMS and Facebook.
-          We have a reporting feature, that our team monitors for any unsuitable behavior.</p>
-        </div>
-        <div class="box p20">
-          <img class="p10" src="/storage/img/home/coin.png">
-          <h2>We're Free</h2>
-          <p class="p10">Although you can pay to enhance the visibility of your post, 
-        homepooling allows you to post and find a room completely <strong>free.</strong></p>
-        </div>
-        <div class="box p20">
-          <img class="p10" src="/storage/img/home/checked.png">
-          <h2>Genuine Listings</h2>
-          <p class="p10">Our team constantly moderates listings to ensure they are genuine, 
-          up-to-date, and still available.</p>
-        </div>
+        @foreach($timeline as $line)
+          @php
+            $l = json_decode($line->meta_value);
+          @endphp
+          <div class="box p20">
+            <img class="p10" src="{{ asset('storage/img/home')}}/{{ $l->i }}">
+            <h2>{{$l->t}}</h2>
+            <p class="p10">{{$l->d}}</p>
+          </div>
+        @endforeach
       </div>
     </div>
     <div class="" style="background-color: #F3F3F3">
       <div class="page-content container">
-        <h1 class="align-items-center justify-content-center page-title">Latest <span class="f-p-b">Homepools</span></h1>
-        <div class="listings-grid text-center">
+         <h1 class="p20 title_h1">Latest Homepools</h1>  
+        <div class="listings-grid row">
         @include('block',['properties'=>$properties,'now'=>$now])
         </div>
         {{--
@@ -159,7 +387,6 @@
 </main>
 
 <script>
-  
   var placeSearch, autocomplete, marker, map, lat, long,place;
   var markers=[];
   

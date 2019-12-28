@@ -3,15 +3,15 @@
 					$diff = $now->diffInDays($property->created_at);
 					$early_access = $property->early_access;
 				?>
-				<div class="listing-block {{ isset($forShow) ? '' : 'nonVis' }}">
+				<div class="listing-block col-md-4 {{ isset($forShow) ? '' : 'nonVis' }}">
 					<!-- col-xs-12 col-sm-6 col-md-4 -->
 					<a href="/properties/{{$property->id}}" class="listing-image">
 						@if(isset($property->images) && $preview = $property->images()->first())
 							<?php
-								$ext = '.'.pathinfo($preview->url, PATHINFO_EXTENSION);
-								$previewThumb = str_replace(basename($preview->url), 'thumbs/'.basename($preview->url, $ext).'_th'.$ext, $preview->url);
+								$ext = '.'.pathinfo('/storage/img/'.$preview->url, PATHINFO_EXTENSION);
+								$previewThumb = str_replace(basename('/storage/img/'.$preview->url), 'thumbs/'.basename('/storage/img/'.$preview->url, $ext).'_th'.$ext, '/storage/img/'.$preview->url);
 							?>
-							<img src="{{ file_exists(public_path($previewThumb)) ? $previewThumb : $preview->url }}">
+							<img src="{{ file_exists(public_path($previewThumb)) ? $previewThumb : '/storage/img/'.$preview->url }}">
 						@else
 							<img src="/storage/img/placeholder.png">
 						@endif

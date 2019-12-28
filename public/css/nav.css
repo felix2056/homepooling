@@ -17,15 +17,12 @@
     font-size: 2em;
     opacity: .95;
     color: #fff;
-    background: url(/storage/img/logo.png) no-repeat;
-    background-size: contain;
     width: 170px;
     text-indent: 200%;
     overflow: hidden;
     top: 1px;
     left: 1em;
     height: 100%;
-    background-position: center;
 }
 .brand a,
 .brand a:visited {

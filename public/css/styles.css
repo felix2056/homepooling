@@ -810,10 +810,6 @@ main.search_list.again > div,main.search_list.again .gmaps_wrapper{
 }
 
 .listing-block {
-    /*width: 100%;
-    float: left;*/
-    display: inline-block;
-    width: 290px;
     font-family: 'font-proxima-bold';
     padding: .75em;
     opacity:1;
@@ -852,14 +848,55 @@ h2.props{
     }
 }
 @media(min-width:900px) {
-	.listing-block {
-		/*width: 33.33%*/
+    .listing-block {
+        /*width: 33.33%*/
         width: 320px;
         padding: 1.2em;
-	}
-	.props .listing-block{
-		width:49.6%;
-	}
+    }
+    .props .listing-block{
+        width:49.6%;
+    }
+    #search_bar input{
+        margin:0;
+        width: 100%;
+        padding: 2px;
+        border: 0;
+        height: 100%;
+    }
+    .search_properties #search_bar .drop{
+        width:49.5%;
+        float:left;
+        margin: 1% 1% 1% 0;
+        border:none;
+    }
+    .search_properties #search_bar .drop:nth-child(odd){
+        margin-right:0;
+    }
+    .search_properties #search_bar{
+        padding: 2% 3%;
+    }
+    .search_properties #search_bar > input{
+        min-width:100%;
+        margin-top:2%;
+        margin-bottom:1%;
+    }
+    
+}
+@media(min-width:1200px) {
+    .listing-block {
+        width: 380px;
+    }
+}
+
+@media(max-width:899px) {
+    .listing-block:last-child {
+        margin: auto;
+        float: none;
+        clear: both
+    }
+}
+
+@media(min-width:900px) {
 	#search_bar input{
         margin:0;
         width: 100%;
@@ -885,11 +922,6 @@ h2.props{
 		margin-bottom:1%;
 	}
 	
-}
-@media(min-width:1200px) {
-    .listing-block {
-        width: 380px;
-    }
 }
 
 @media(max-width:899px) {
@@ -1472,16 +1504,30 @@ h2.props{
 }
 .price_overlay{
 	position:relative;
-	top:-100px;
-	color:#fff;
+	top:-120px;
 }
 .price_overlay h2{
-	font-weight:800;
+	font-weight:600;
+    font-size: 40px;
 	margin:0;
+    color:#fff;
 }
 .price_overlay p{
 	font-size:2em;
 	text-transform:capitalize;
+    color:#fff;
+}
+.viewers{
+    position: relative !important;
+    top: -50px !important;
+}
+.viewers .proimage{
+    width: 60px !important;
+    height: 60px !important;
+    box-shadow: 0px 0px 0px 3px #0eb6c8 !important;
+}
+.viewers > .listing-visitors > .visitor {
+    border: 5px solid #fff;
 }
 /* end property_view*/
 /* property_share */

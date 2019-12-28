@@ -58,9 +58,44 @@
 								<div style="margin-top: 6em;">
 									<div class="clearfix">
 										@if(isset($property))
-											<a class="btn btn-lg btn-primary btn-block btn_submit" style="float:left;" href="#share" id="update_property">Save Property</a>
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-lg btn-primary btn-block btn_submit" data-toggle="modal" data-target="#termAndConditions">
+										  Save Property
+										</button>
 										@else
-											<a class="btn btn-lg btn-primary btn-block btn_submit" style="float:left;" href="#share" id="to_package">Continue</a>
+										<button type="button" class="btn btn-lg btn-primary btn-block btn_submit" data-toggle="modal" data-target="#termAndConditions">
+										  Save Property
+										</button>
 										@endif
 									</div>
+								</div>
+
+								<!-- Modal -->
+								<div class="modal fade" id="termAndConditions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+								  <div class="modal-dialog modal-dialog-centered" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <h5 class="modal-title" id="exampleModalLongTitle">Terms & Conditions</h5>
+								        
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div class="modal-body">
+								      	<div class="container" style="height: 60vh; overflow: auto;">
+								      		<?php $terms = App\Setting::where('meta_key', 'terms')->pluck('meta_value');
+								        	echo htmlspecialchars(trim($terms));
+								      ?>
+								      	</div>
+								      </div>
+								      <div class="modal-footer">
+								      	<button type="button" class="btn btn-secondary" data-dismiss="modal">Disagree</button>
+								      	@if(isset($property))
+											<a class="tooltip-test btn btn-lg btn-primary btn-block btn_submit" style="float:left;" href="#share" id="update_property" title="clicking accept means you agree to all the terms">Accept</a>
+										@else
+											<a class="tooltip-test btn btn-lg btn-primary btn-block btn_submit" style="float:left;" href="#share" title="clicking accept means you agree to all the terms" id="to_package">Accept</a>
+										@endif
+								      </div>
+								    </div>
+								  </div>
 								</div>

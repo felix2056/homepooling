@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('pageTitle')
+Invite - Homepooling
+@endsection
+
 @section('content')
 <main id="content" class="invites">
 	<div class="page-header" id="headerContent">

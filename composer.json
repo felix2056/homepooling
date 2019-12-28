@@ -9,6 +9,7 @@
         "aloha/twilio": "^3.0",
         "fideloper/proxy": "~3.3",
         "greggilbert/recaptcha": "^2.2",
+        "guzzlehttp/guzzle": "^6.5",
         "intervention/image": "^2.4",
         "intervention/imagecache": "^2.3",
         "laravel/cashier": "^7.0",

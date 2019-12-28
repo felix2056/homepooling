@@ -465,7 +465,7 @@ class PropertyController extends PaymentController
 			$can_receive=false;
 		}
 		
-		return view('property',compact('property','amenities','acceptings','nearbies','images','contract','user', 'male', 'female', 'queer','visitors','favorited','now','can_receive'));
+		return view('property',compact('property','amenities','acceptings','nearbies','images','contract','user', 'male', 'female', 'queer','visitors','now','can_receive'));
 	}
 
     /**

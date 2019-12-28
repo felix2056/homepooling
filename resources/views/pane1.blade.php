@@ -97,13 +97,13 @@
                     </h4>
                     <div class="sa-lable">
                       <select class="epc_select sa-select" name="epc">
-                        <option name="epc" value="a" @if(isset($property) && $property->epc==='a') checked="checked" @endif >A</option>
-                        <option name="epc" value="b"  @if(isset($property) && $property->epc==='b') checked="checked" @endif >B</option>
-                        <option name="epc" value="c" @if(isset($property) && $property->epc==='c') checked="checked" @endif >C</option>
-                        <option name="epc" value="d" @if(isset($property) && $property->epc==='d') checked="checked" @endif >D</option>
-                        <option name="epc" value="e" @if(isset($property) && $property->epc==='e') checked="checked" @endif >E</option>
-                        <option name="epc" value="f" @if(isset($property) && $property->epc==='f') checked="checked" @endif >F</option>
-                        <option name="epc" value="g" @if(isset($property) && $property->epc==='g') checked="checked" @endif >G</option>
+                        <option name="epc" value="1" @if(isset($property) && $property->epc==='1') checked="checked" @endif >1</option>
+                        <option name="epc" value="2"  @if(isset($property) && $property->epc==='2') checked="checked" @endif >2</option>
+                        <option name="epc" value="3" @if(isset($property) && $property->epc==='3') checked="checked" @endif >3</option>
+                        <option name="epc" value="4" @if(isset($property) && $property->epc==='4') checked="checked" @endif >4</option>
+                        <option name="epc" value="5" @if(isset($property) && $property->epc==='5') checked="checked" @endif >5</option>
+                        <option name="epc" value="6" @if(isset($property) && $property->epc==='6') checked="checked" @endif >6</option>
+                        <option name="epc" value="7" @if(isset($property) && $property->epc==='7') checked="checked" @endif >7</option>
                       </select>
                     </div>
                   </div>

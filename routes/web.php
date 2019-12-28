@@ -85,6 +85,20 @@ Route::middleware(['auth','isadmin'])->group(function(){
 	Route::get('/back-office/orders', 'AdminController@orders')->name('admin.orders');
 	Route::get('/back-office/reports', 'AdminController@reports')->name('admin.reports');
 	Route::delete('/back-office/reports/{report}', 'AdminController@destroyReport')->name('admin.report');
+	Route::any('/back-office/settings', 'AdminController@settings')->name('admin.settings');
+	Route::any('/back-office/gallery', 'ImagesController@index')->name('admin.gallery');
+	Route::any('/back-office/contact_us', 'AdminController@contactUs')->name('admin.contact_us');
+	Route::any('/back-office/terms', 'AdminController@terms')->name('admin.terms');
+	Route::any('/back-office/timeline', 'AdminController@timeline')->name('admin.timeline');
+	Route::post('/back-office/timeline/{id}/delete', 'AdminController@timelineDelete')->name('admin.timeline_delete');
+	Route::any('/back-office/analytics', 'AdminController@analytics')->name('admin.analytics');
+
+	Route::group(['prefix' => 'back-office'], function () {
+		Route::resource('slider','SliderController');
+	});
+	/*Route::any('/back-office/sliders', 'SliderController@index')->name('admin.sliders');
+	Route::get('/back-office/slider/{id}/edit', 'SliderController@edit')->name('admin.slider.edit');
+	Route::post('/back-office/slider/{id}/delete', 'SliderController@destroy')->name('admin.slider.destroy');*/
 });
 
 
