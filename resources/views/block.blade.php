@@ -3,7 +3,7 @@
 					$diff = $now->diffInDays($property->created_at);
 					$early_access = $property->early_access;
 				?>
-				<div class="listing-block col-md-4 {{ isset($forShow) ? '' : 'nonVis' }}">
+				<div class="listing-block  {{ isset($forShow) ? '' : 'nonVis' }}">
 					<!-- col-xs-12 col-sm-6 col-md-4 -->
 					<a href="/properties/{{$property->id}}" class="listing-image">
 						@if(isset($property->images) && $preview = $property->images()->first())

@@ -54,7 +54,7 @@ HomePooling - Pool Your Home
 
     <style type="text/css">
      .carousel-inner{
-        height: 53em;
+        height: auto;
       }
 
       .homepoolHead{
@@ -324,15 +324,15 @@ HomePooling - Pool Your Home
       </div>
     </div>
     <div class="" style="background-color: #F3F3F3">
-      <div class="page-content container">
+      <div class="page-content">
          <h1 class="p20 title_h1">Latest Homepools</h1>  
-        <div class="listings-grid row">
+        <div class="listings-grid text-center">
         @include('block',['properties'=>$properties,'now'=>$now])
         </div>
         {{--
         @include('latest_wanted')
         <h1 class="page-title">Latest Users</h1>
-        <div class="listings-grid users">
+        <div class="listings-grid text-center users">
         @foreach($users as $user)
           <a href="/profiles/{{$user->id}}" class="user-link">
           @if($user->photo||$user->photo==='')
