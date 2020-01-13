@@ -3,8 +3,8 @@
 			<a href="#home" id="home-room-prev" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="color: #333;">
 				<div class="ico_navtabs">
-					<img class="icon" style="width: 36px" src="/storage/icons/001-home.png"/>
-					<img class="icon-active" style="width: 36px" src="/storage/icons_active/001-home.png"/>
+					<img class="icon" style="width: 36px" src="/storage/img/icons/001-home.png"/>
+					<img class="icon-active" style="width: 36px" src="/storage/img/icons_active/001-home.png"/>
 				</div>
 				<div class="ico_navtabs_t">
 					<div><strong style="font-size: 20px">1</strong></div>
@@ -17,8 +17,8 @@
 			<a href="#room" id="home-room-next" role="tab" data-toggle="tab" aria-controls="room" aria-expanded="false">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="color: #333;">
 				<div class="ico_navtabs">
-					<img class="icon" style="width: 36px" src="/storage/icons/002-sleeping-bed.png"/>
-					<img class="icon-active" style="width: 36px" src="/storage/icons_active/002-sleeping-bed.png"/>
+					<img class="icon" style="width: 36px" src="/storage/img/icons/002-sleeping-bed.png"/>
+					<img class="icon-active" style="width: 36px" src="/storage/img/icons_active/002-sleeping-bed.png"/>
 					</div>
 					<div class="ico_navtabs_t">
 					<div><strong style="font-size: 20px">2</strong></div>
@@ -31,8 +31,8 @@
 			<a href="#accept" id="home-room-next2" role="tab" data-toggle="tab" aria-controls="accept" aria-expanded="false">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="color: #333;">
 				<div class="ico_navtabs">
-					<img class="icon" style="width: 36px" src="/storage/icons/003-contract.png"/>
-					<img class="icon-active" style="width: 36px" src="/storage/icons_active/003-contract.png"/>
+					<img class="icon" style="width: 36px" src="/storage/img/icons/003-contract.png"/>
+					<img class="icon-active" style="width: 36px" src="/storage/img/icons_active/003-contract.png"/>
 					</div>
 					<div class="ico_navtabs_t">
 					<div><strong style="font-size: 20px">3</strong></div>
