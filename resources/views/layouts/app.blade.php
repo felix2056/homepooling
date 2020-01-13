@@ -57,8 +57,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!--MDB-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" />
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/mdb.min.css') }}">
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" />-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/mdb.css') }}">-
 	<style type="text/css">
 		.envelope.incoming {
 			position: relative;

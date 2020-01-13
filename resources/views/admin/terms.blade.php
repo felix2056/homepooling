@@ -11,11 +11,11 @@ Timeline
     <!-- Section header -->
     <section class="content-header">
         <h1>
-            FAQ
+            Terms
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{URL::route('admin.home')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li class="active">FAQ</li>
+            <li class="active">Terms</li>
         </ol>
     </section>
     <!-- ./Section header -->
@@ -25,7 +25,7 @@ Timeline
             <div class="col-md-12">
                 <div class="box box-info">
                         <div class="box-header">
-                            <h3 class="box-title">FAQ <span class="text-danger"> * Marks are required feild</span></h3>
+                            <h3 class="box-title">Terms <span class="text-danger"> * Marks are required feild</span></h3>
                         </div>
 
                         <!-- /.box-header -->
@@ -34,7 +34,7 @@ Timeline
                             {{ csrf_field() }}
                             <div class="form-group has-feedback">
                                 <label for="terms">Terms & Conditions <span class="text-danger">*</span></label>
-                                <textarea  name="terms" class="form-control textarea" required minlength="5" >@if($terms){{ $terms }}@endif</textarea>
+                                <textarea  name="terms" class="form-control textarea" required minlength="5" >@if($terms){{ html_entity_decode($terms) }}@endif</textarea>
                                 <span class="glyphicon glyphicon-info form-control-feedback"></span>
                                 <span class="text-danger">{{ $errors->first('terms') }}</span>
                             </div>

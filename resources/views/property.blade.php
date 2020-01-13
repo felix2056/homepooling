@@ -212,7 +212,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="sticky_buttons" class="user_message col-lg-4 col-md-4 col-sm-12 col-xs-12">
+		<div id="sticky_buttons" style="float: right; position: sticky; top: 0;" class="user_message col-lg-4 col-md-4 col-sm-12 col-xs-12">
 				<div class="property_buttons col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: #fff; padding: 24px; border: 0.5px solid #ccc; border-radius: 10px; margin-bottom: 20px">
 					@if(Auth::check() && Auth::user()->id==$property->user_id)
 						<a class="btn btn-default" href="/properties/{{$property->id}}/edit">Edit property <i class="fa fa-edit"></i></a>
@@ -255,7 +255,7 @@
 	<div class="col-xs-12 similar-pools">
 		<div class="container">
 			<div class="listings-grid row text-center">
-				<h2 class="col-xs-12 text-center">Similar Pools</h2>
+				<h2 class="col-md-12 text-center">Similar Pools</h2>
 				@include('block', ['properties' => $nearbies,'now' => $now, 'forShow' => true])
 			</div>
 		</div>

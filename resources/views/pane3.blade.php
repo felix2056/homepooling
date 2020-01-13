@@ -84,7 +84,7 @@
 								      <div class="modal-body">
 								      	<div class="container" style="height: 60vh; overflow: auto;">
 								      		<?php $terms = App\Setting::where('meta_key', 'terms')->pluck('meta_value');
-								        	echo htmlspecialchars(trim($terms));
+								        	echo html_entity_decode($terms);
 								      ?>
 								      	</div>
 								      </div>

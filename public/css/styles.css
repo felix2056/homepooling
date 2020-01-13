@@ -1886,7 +1886,7 @@ h2.props{
 }
 .btn-block.btn_prev,.btn-block.btn_next,.btn-block.btn_submit{
     width:30%;
-    margin:0 10px 50px 0;
+    /*margin:0 10px 50px 0;*/
 }
 .btn-block.btn_submit{
     background-color: #FF6600;
